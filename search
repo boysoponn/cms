@@ -1,0 +1,21 @@
+
+// if(isset($_POST['search'])){
+// $searchID=$_POST['search'];
+// $searchID=preg_replace("#[^0-9a-z]#i","", $searchID);
+
+// $query= mysqli_query($database,"SELECT * from id where username like '%$searchID%' ") or die("Can't search");
+
+// $count = mysqli_num_rows($query);
+ 
+// if($count==0){
+//     $output = "No have";
+// }else{
+//  while($row = mysqli_fetch_array($query)){
+    
+// $name = $row['username'];
+//  echo $output = '<div>'.$name.'</div>';
+ 
+//  }
+
+// }
+// }
