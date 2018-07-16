@@ -42,47 +42,47 @@ include('config.php');
 <button  type="submit" name="form" value="search" >SEARCH PAGE</button>
 
 <?php
-
-if(isset($_POST['search_page']) && !empty($_POST['search_page'])){
+$search_page = $_POST['search_page'];
+if(isset($_POST['form'])){
+    if(isset($_POST['search_page']) && !empty($_POST['search_page'])){
     
-     if ($_POST['form'] == 'search') {
-    $search_page=$_POST['search_page'];
-    $search_page=preg_replace("#[^0-9a-z]#i","", $search_page);
-    $page_query=mysqli_query($database,"SELECT * from $search_page " );
-
-    $count = mysqli_num_rows($page_query);
-    if($count==0){
-        echo "No have";
-    }else{
-     while($row = mysqli_fetch_array($page_query)){
-    $all_item_values = $row['item_values']; 
-    $all_item_name = $row['item_name'];?>
-    <h1><?=$all_item_name?></h1>
-    <input type="text" name="<?php echo $row['item_name']; ?>"value="<?=$all_item_values?>">
-    <!-- <textarea name="pageitem_values" cols="50" rows="5"values=""><?=$all_item_values?></textarea> -->
-    <?php 
-    
-   } 
-   if(isset($_POST['form1'])){ 
-       if ($_POST['form1'] == 'save') {
-    print_r($_POST);
-    exit();
-      
+        if ($_POST['form'] == 'search') {
+        $search_page=$_POST['search_page'];
+        $search_page=preg_replace("#[^0-9a-z]#i","", $search_page);
+        $page_query=mysqli_query($database,"SELECT * from $search_page " );
+        $count = mysqli_num_rows($page_query);
+            if($count==0){
+                echo "No have";
+            }else{
+            while($row = mysqli_fetch_array($page_query)){
+                $all_item_values = $row['item_values']; 
+                $all_item_name = $row['item_name'];?>
+                <h1><?=$all_item_name?></h1>
+                <input type="text" name="<?php echo $row['item_name']; ?>"value="<?=$all_item_values?>">
+                <!-- <textarea name="pageitem_values" cols="50" rows="5"values=""><?=$all_item_values?></textarea> -->
+            <?php             
+            } 
+            }  
+        }
+    }
+} 
+   if (isset($_POST['ss'])) {
+           echo( $search_page);
+  
     $pageitem_values=$_POST['pageitem_values'];
     mysqli_query($database,"UPDATE $search_page  SET item_values = $pageitem_values  ") ; 
-    }
-    }?>
-    <button  type="submit" name="form1" value="save" >save</button>
-    <?php
     
-    }  
-    }
-}
+     } ?>
+    <button  type="submit" name="ss" value="save" >save</button>
 
+    <?php 
+    
+    
+    
+    
+  
 
 ?>
-
-
 </form>
 
 </body>
