@@ -19,3 +19,27 @@
 
 // }
 // }
+
+
+
+
+<form action="cms.php" method="post">
+<h1>CREATE PAGE homepage</h1>
+<input type="text" name="rrr">
+<button  type="submit" name="form" value="search" >SEARCH PAGE</button>
+<input type="text" name="ddd">
+<button  type="submit" name="form" value="sss" >sss PAGE</button>
+
+<?php
+
+
+if(isset($_POST['form'])){
+if ($_POST['form'] == 'search') {            
+    echo ($_POST['rrr']);
+}elseif ($_POST['form'] == 'sss') {            
+    echo ($_POST['ddd']);
+}
+
+}
+ ?>
+</form>   

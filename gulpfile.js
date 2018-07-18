@@ -28,5 +28,18 @@ gulp.task('watch', function () {
 
 });
 
+var uglify = require('gulp-uglify');
+var pump = require('pump');
+
+gulp.task('compress', function (cb) {
+  pump([
+        gulp.src('/bliud/js/main.js'),
+        uglify(),
+        gulp.dest('/bliud/js/main2.js')
+    ],
+    cb
+  );
+});
+
 gulp.task('default',['scripts','sass','watch'], function() {
 });
