@@ -21,6 +21,26 @@
 // }
 
 
+----------------------------------------------------------------------------------------------------------------------------
+
+  
+// if(isset($_POST['page']) && !empty($_POST['page'])){
+//     $page=$_POST['page'];
+//     $page=preg_replace("#[^0-9a-z]#i","", $page);
+//     mysqli_query($database,"CREATE TABLE $page (id int NULL AUTO_INCREMENT PRIMARY KEY,item_name varchar(255),item_variable varchar(255),item_values varchar(255))") ;
+// }
+
+// if(isset($_POST['pageitem_name']) && !empty($_POST['pageitem_name'])&&isset($_POST['pageitem_variable']) && !empty($_POST['pageitem_variable'])&&isset($_POST['pageitem_values']) && !empty($_POST['pageitem_values'])){
+// $pageitem_name=$_POST['pageitem_name'];
+// $pageitem_name=preg_replace("#[^0-9a-z]#i","", $pageitem_name);
+// $pageitem_variable=$_POST['pageitem_variable'];
+// $pageitem_variable=preg_replace("#[^0-9a-z]#i","", $pageitem_variable);
+// $pageitem_values=$_POST['pageitem_values'];
+
+// mysqli_query($database,"INSERT INTO $page(item_name,item_variable,item_values)VALUES('$pageitem_name','$pageitem_variable','$pageitem_values')") ; 
+// }
+
+
 
 
 <form action="cms.php" method="post">
@@ -43,3 +63,5 @@ if ($_POST['form'] == 'search') {
 }
  ?>
 </form>   
+-----------------------------------------------------------------------------
+SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_SCHEMA='sopon'
