@@ -1,5 +1,6 @@
 <?php 
 include('config.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,16 +18,16 @@ include('config.php');
 if(isset($_SESSION['username'])){ ?>
 
     <div class="cms">
-    <form action="cms.php" method="post">    
+    <form action="cms.php" method="post" enctype="multipart/form-data">    
     <div style="float:right">
-        <h1><?=$_SESSION['username']?></h1>
+        <p>Welcome , <?=$_SESSION['username']?></p>
         <button  name="form" value="logout">LOGOUT</button>
     </div>
         <h1>EDIT PAGE homepage</h1>
         <input list="browser" name="edit_browser" placeholder="เลือกไอเทม">
         <datalist id="browser">
         <?php 
-        $item_query=mysqli_query($database,"SELECT item_name from homepage ");
+        $item_query=mysqli_query($connect,"SELECT item_name from homepage ");
         $count = mysqli_num_rows($item_query);
             while($row = mysqli_fetch_array($item_query)){
                 $item_name = $row['item_name'];?>
@@ -34,8 +35,8 @@ if(isset($_SESSION['username'])){ ?>
             <?php } ?>   
         </datalist>
         <input type="text" name="edit_value" placeholder="กรอกข้อมูลใหม่ได้เลยค้าบบ">
-        <button  type="submit" name="form" value="save" >save</button><br>
-        <input type="file" name="upload">
+        <button  type="submit" name="form" value="save" >SAVE</button><br>
+        <input type="file" name="uploaded_file">
         <button type="submit" name="form" value="upload">UPLOAD</button>
         <h1>Search Page</h1>
         <input type="text" name="search_page" placeholder="กรอกชื่อเพจเพื่อดูรายละเอียด">
@@ -51,32 +52,34 @@ if(isset($_SESSION['username'])){ ?>
             if(isset($_POST['search_page']) && !empty($_POST['search_page'])){        
             $search_page=$_POST['search_page'];
             $search_page=preg_replace("#[^0-9a-z]#i","", $search_page);             
-            $page_query=mysqli_query($database,"SELECT * from $search_page " );
+            $page_query=mysqli_query($connect,"SELECT * from $search_page " );
             $count = mysqli_num_rows($page_query);
                 if($count==0){
                     echo "No have this page";
-                }else{
+                }else{?> 
+                <form action="" method="post"><?php
                 while($row = mysqli_fetch_array($page_query)){
                     $all_item_values = $row['item_values']; 
                     $all_item_name = $row['item_name'];
                     $all_item_id = $row['id'];?>
-                    <p>ID =<?=$all_item_id?>&nbsp;&nbsp;&nbsp;<?=$all_item_name?></p>
-                    <!-- <input type="text" value="<?=$all_item_values?>"> -->
+                    <p>ID =<?=$all_item_id?>&nbsp;&nbsp;&nbsp;<?=$all_item_name?></p>                  
                     <textarea name="pageitem_values" cols="50" rows="3"values=""><?=$all_item_values?></textarea>
             <?php 
-                }     
-                }
+                }?>
+                </form>     
+                <?php }
             }
         }elseif ($_POST['form'] == 'save'){
              $edit_browser=$_POST['edit_browser'];
              $edit_value=$_POST['edit_value'];
-             mysqli_query($database,"UPDATE homepage set item_values = '$edit_value' where item_name like '$edit_browser'");
-        
-        }elseif ($_POST['form'] == 'upload'){  
-            $edit_browser=$_POST['edit_browser'];
-            $hero_image=($_POST['upload']) ; 
-        mysqli_query($database,"UPDATE homepage set item_values = '$hero_image' where item_name like '$edit_browser' ");
-        unset($_SESSION['username']);
+             mysqli_query($connect,"UPDATE homepage set item_values = '$edit_value' where item_name like '$edit_browser'");
+        }elseif ($_POST['form'] == 'upload'&& !empty($_FILES['uploaded_file'])){    
+                $edit_browser=$_POST['edit_browser'];
+                $hero_image=$_FILES['uploaded_file']['name'] ;
+                $path = "uploads/";
+                $path = $path . basename( $_FILES['uploaded_file']['name']);
+                move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $path);
+                mysqli_query($connect,"UPDATE homepage set item_values = '$hero_image' where item_name like '$edit_browser' ");
         }
     }?>
     </form>
@@ -98,7 +101,7 @@ if(isset($_SESSION['username'])){ ?>
             $login_password=$_POST['login_password'];
             $login_ID=preg_replace("#[^0-9a-z]#i","", $login_ID);
             $login_password=preg_replace("#[^0-9a-z]#i","", $login_password);
-            $query_username= mysqli_query($database,"SELECT * from id where username = '$login_ID' ") or die("Can't search");
+            $query_username= mysqli_query($connect,"SELECT * from id where username = '$login_ID' ") or die("Can't search");
             $count = mysqli_num_rows($query_username);
                 if($count==0){
                     echo "No this username";

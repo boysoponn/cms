@@ -4,8 +4,7 @@ $servername="localhost";
 $username="root";
 $password="";
 $db="sopon";
-$database = new mysqli($servername, $username, $password,$db);
-
+$connect = new mysqli($servername, $username, $password,$db);
 
 function dd($data){
     print_r($data);

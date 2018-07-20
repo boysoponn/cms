@@ -6,7 +6,7 @@ $login_password=$_POST['login_password'];
 $login_ID=preg_replace("#[^0-9a-z]#i","", $login_ID);
 $login_password=preg_replace("#[^0-9a-z]#i","", $login_password);
 
-$query_username= mysqli_query($database,"SELECT * from id where username = '$login_ID' ") or die("Can't search");
+$query_username= mysqli_query($connect,"SELECT * from id where username = '$login_ID' ") or die("Can't search");
 
  $count = mysqli_num_rows($query_username);
  
