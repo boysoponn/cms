@@ -12,7 +12,7 @@
 
 // });
 function refresh_page_cms(){
-    window.location="/cms.php";
+    window.location="/index.php";
 }
 
 
@@ -37,3 +37,9 @@ function required_lastname()
     $('#lastname').html("Required lastname");
     event.preventDefault();
 }
+
+
+$(document).on('click','#topic',function(event)
+{   
+        $('.detail').css({"display":"block"});  
+});

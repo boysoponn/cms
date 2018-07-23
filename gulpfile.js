@@ -4,7 +4,7 @@ var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 
 /*******************บรรจุ PATH JS***************************/
-var js=['./jqury.js','./src/js/cms.js','./src/js/index.js']
+var js=['./jqury.js','./src/js/cms.js','./src/js/index.js','./src/js/navbar.js']
 /******************************************************/
 
 gulp.task('sass', function () {

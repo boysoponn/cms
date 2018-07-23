@@ -1,20 +1,21 @@
 
 body{
-    background-color:#28d;
+    margin: 0;
+    top:0;
+    background-color: #28d;
+    text-decoration: none;
 }
 p,h1{
 color:#fff;
 }
-.right{
-    border:solid 3px white;
-    width: 30%;
-float: left;
-}
-.left{
-width:40%;
-    border:solid 2px white;
-}
+
 .login{
     margin: auto;
     width: 15%;
 }
+.cms{
+    display: flex;
+    justify-content: center;
+    width: 100%;  
+}
+

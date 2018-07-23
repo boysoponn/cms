@@ -11,6 +11,6 @@
 
 // });
 function refresh_page_cms(){
-    window.location="/cms.php";
+    window.location="/index.php";
 }
 
