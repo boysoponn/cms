@@ -1,4 +1,3 @@
-
 function required_usename()
 {  
     $('#username').html("Required username");

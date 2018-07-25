@@ -10,7 +10,4 @@
 //  $('#form_new_item').before($('#form_new_item').html());
 
 // });
-function refresh_page_cms(){
-    window.location="/index.php";
-}
 

@@ -11,10 +11,6 @@
 //  $('#form_new_item').before($('#form_new_item').html());
 
 // });
-function refresh_page_cms(){
-    window.location="/index.php";
-}
-
 
 
 function required_usename()
@@ -39,7 +35,7 @@ function required_lastname()
 }
 
 
-$(document).on('click','#topic',function(event)
-{   
-        $('.detail').css({"display":"block"});  
-});
+// $(document).on('click','#topic',function(event)
+// {   
+//         $('.detail').css({"display":"block"});  
+// });

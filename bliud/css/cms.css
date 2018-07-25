@@ -4,9 +4,6 @@ body {
   background-color: #28d;
   text-decoration: none; }
 
-p, h1 {
-  color: #fff; }
-
 .login {
   margin: auto;
   width: 15%; }
