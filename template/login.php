@@ -90,18 +90,6 @@ if(isset($_POST['register'])){
     $query_signto= mysqli_query($connect,"INSERT INTO id(username,pass,firstname,lastname)VALUES('$username','$password','$firstname','$lastname' )") ;
     header("Location: http://soponcms.test/cms.php"); 
     }
-    if(empty($_POST['username'])){ ?>
-       <script> required_usename(); </script>
-    <?php }
-    if(empty($_POST['password'])){ ?>
-        <script> required_password(); </script>
-    <?php }
-    if(empty($_POST['firstname'])){ ?>
-        <script> required_firstname(); </script>
-    <?php }
-    if(empty($_POST['lastname'])){ ?>
-        <script> required_lastname(); </script>
-    <?php }
 }
 ?>
 

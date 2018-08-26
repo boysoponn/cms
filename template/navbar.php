@@ -1,25 +1,73 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<div class="navbar">
-    <a href="register.php">register</a>
-    <a class="topic" href="cms.php">cms</a>
-    <a href="create_control.php">control</a>
-    <a href="create_template.php">template</a>
-    <a href="create_page.php">page</a>
-    <!-- <div class="detail">
-        <?php   
-        $get_table_query = mysqli_query($connect,"SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'AND TABLE_NAME != 'id' AND TABLE_SCHEMA='sopon'"); 
-        while($row = mysqli_fetch_array($get_table_query)){           
-            $table_name = $row['TABLE_NAME']; ?>
-         <a href=""><?=$table_name ?></a>         
-        <?php } ?>
-    </div> -->
-</div>
-</body>
-</html>
+<?php 
+    if (isset($_POST['title']) && !empty($_POST['title'])){
+          $hero_title=$_POST['title'];
+          mysqli_query($connect,"UPDATE homepage set item_values = '$hero_title' where item_name like 'title'");
+    }
+    if (isset($_POST['description']) && !empty($_POST['description'])){
+          $hero_description=$_POST['description'];
+          mysqli_query($connect,"UPDATE homepage set item_values = '$hero_description' where item_name like 'description'");
+    }   
+    if (isset($_FILES['uploaded_file']) && !empty($_FILES['uploaded_file'])){
+          $hero_image=$_FILES['uploaded_file']['name'] ;
+          $path = "uploads/";
+          $path = $path . basename( $_FILES['uploaded_file']['name']);
+          move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $path);
+          mysqli_query($connect,"UPDATE homepage set item_values = '$hero_image' where item_name like 'image' "); 
+    }
+
+?>
+<ul class="sidebar-menu">
+    <li><span class="nav-section-title"></span></li>
+    <li class="have-children">
+      <a href="#"><span class="fa fa-university"></span>Hero</a>
+      <div class="cms_form" action="" method="post" enctype="multipart/form-data"> 
+        <div class="form-group-cms">
+          <input type="text" class="form-cms" name="title" id="title">
+          <label>Title</label>
+          <div class="input-border"></div>
+        </div>
+        <div class="form-group-cms">
+          <input type="text" class="form-cms" name="description" id="description">
+          <label>description</label>
+          <div class="input-border"></div>
+        </div>
+        <div class="form-group-cms">
+          <label class="image_label">Image</label>
+          <button class="input-file">
+            <input type="file" id="file-input"/>
+            <label for="file-input">UPLOAD</label>
+          </button>
+        </div>
+        <button class="save" id = "formsubmit" name="save" value="save" >Save</button><br>  
+  </div> 
+      
+    </li>
+
+    <li class="have-children"><a href="#"><span class="fa fa-tags"></span>Category</a>
+      <ul>
+        <li><a href="#">Add Category</a></li>
+        <li><a href="#">View Categories</a></li>
+      </ul>
+    </li>
+    <li class="have-children"><a href="#"><span class="fa fa-trophy"></span>Award</a>
+      <ul>
+        <li><a href="#">Add Award</a></li>
+        <li><a href="#">View Awards</a></li>
+      </ul>
+    </li>
+    <li class="have-children"><a href="#"><span class="fa fa-gavel"></span>Jury</a>
+      <ul>
+        <li><a href="#">Add Jury</a></li>
+        <li><a href="#">View Juries</a></li>
+      </ul>
+    </li>
+    <li class="have-children"><a href="#"><span class="fa fa-flag"></span>Reports</a>
+      <ul>
+        <li><a href="#">View Judging points</a></li>
+        <li><a href="#">Create Acceptances List</a></li>
+        <li><a href="#">Create Awarded List</a></li>
+        <li><a href="#">View Candidates for Awards</a></li>
+        <li><a href="responsive_table.html">Send Report Cards</a></li>
+      </ul>
+    </li>
+  </ul> 

@@ -1,25 +1,166 @@
-.navbar {
-  position: absolute;
+ul.sidebar-menu {
   margin: 0;
-  top: 0;
   padding: 0;
-  width: 15%;
+  width: 250px;
   height: 100%;
-  background-color: #f1f1f1;
-  z-index: 1;
-  text-align: center; }
-  .navbar a {
-    display: block;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
-    cursor: pointer; }
-  .navbar a.topic:hover {
-    background-color: #fff; }
-    .navbar a.topic:hover + .detail {
-      display: block;
-      transition: all 1s; }
-  .navbar.detail {
-    background-color: #333;
+  background-color: #52565d;
+  list-style: none;
+  list-style-type: none;
+  position: fixed; }
+
+.sidebar-menu .cms_form {
+  display: none; }
+  .sidebar-menu .cms_form .input-file {
+    position: relative;
+    overflow: hidden;
+    width: 100px;
+    height: 25px;
+    border: none;
+    background-color: #0077CC;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: background-color .3s ease; }
+    .sidebar-menu .cms_form .input-file:hover {
+      background-color: #1788d8; }
+    .sidebar-menu .cms_form .input-file [type=file] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer; }
+    .sidebar-menu .cms_form .input-file label {
+      color: #F1F1F1;
+      font-size: 11px;
+      cursor: pointer; }
+  .sidebar-menu .cms_form .save {
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    font-size: 11px;
+    background: #3c3636;
     color: #fff;
-    transition: all 1s; }
+    border: none;
+    display: block;
+    height: 25px;
+    width: 100px;
+    transition: all .2s ease-in-out; }
+    .sidebar-menu .cms_form .save:hover {
+      background: #4d5158; }
+  .sidebar-menu .cms_form .form-group-cms {
+    position: relative;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    text-align: center; }
+    .sidebar-menu .cms_form .form-group-cms label {
+      margin-left: 10px;
+      font-weight: 300;
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      transition: all .2s ease-in-out; }
+    .sidebar-menu .cms_form .form-group-cms input[type="text"].form-cms,
+    .sidebar-menu .cms_form .form-group-cms input[type="password"].form-cms {
+      height: 48px;
+      background: none;
+      border-radius: 0;
+      box-shadow: none;
+      font-weight: 300;
+      color: #fff;
+      padding-left: 0;
+      padding-right: 0;
+      border: none;
+      border-bottom: 1px solid #ddd;
+      transition: all .1s ease-in-out;
+      position: relative;
+      z-index: 2; }
+      .sidebar-menu .cms_form .form-group-cms input[type="text"].form-cms:focus, .sidebar-menu .cms_form .form-group-cms input[type="text"].form-cms:active,
+      .sidebar-menu .cms_form .form-group-cms input[type="password"].form-cms:focus,
+      .sidebar-menu .cms_form .form-group-cms input[type="password"].form-cms:active {
+        outline: none;
+        box-shadow: none;
+        border: none;
+        color: #fff;
+        font-size: 15px; }
+      .sidebar-menu .cms_form .form-group-cms input[type="text"].form-cms:active + label,
+      .sidebar-menu .cms_form .form-group-cms input[type="text"].form-cms:focus + label,
+      .sidebar-menu .cms_form .form-group-cms input[type="text"].form-cms.active + label,
+      .sidebar-menu .cms_form .form-group-cms input[type="password"].form-cms:active + label,
+      .sidebar-menu .cms_form .form-group-cms input[type="password"].form-cms:focus + label,
+      .sidebar-menu .cms_form .form-group-cms input[type="password"].form-cms.active + label {
+        color: #fff;
+        font-size: 11px;
+        top: -10px;
+        transform: none; }
+      .sidebar-menu .cms_form .form-group-cms input[type="text"].form-cms:active ~ .input-border,
+      .sidebar-menu .cms_form .form-group-cms input[type="text"].form-cms:focus ~ .input-border,
+      .sidebar-menu .cms_form .form-group-cms input[type="text"].form-cms.active ~ .input-border,
+      .sidebar-menu .cms_form .form-group-cms input[type="password"].form-cms:active ~ .input-border,
+      .sidebar-menu .cms_form .form-group-cms input[type="password"].form-cms:focus ~ .input-border,
+      .sidebar-menu .cms_form .form-group-cms input[type="password"].form-cms.active ~ .input-border {
+        width: 80%; }
+    .sidebar-menu .cms_form .form-group-cms .input-border {
+      display: block;
+      width: 0%;
+      height: 1px;
+      background: #fff;
+      transition: all .2s ease-in-out;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 3;
+      margin: 0 auto; }
+
+.sidebar-menu li a {
+  background-color: #4d5158;
+  padding: 20px 25px;
+  display: block;
+  text-decoration: none;
+  color: #fff; }
+  .sidebar-menu li a span {
+    margin-right: 30px;
+    color: #fff; }
+  .sidebar-menu li a:hover {
+    background-color: #52565d;
+    padding: 20px 25px;
+    display: block;
+    text-decoration: none;
+    color: #fff; }
+
+.sidebar-menu .have-children > ul {
+  display: none; }
+
+li.have-children {
+  position: relative; }
+  li.have-children ul {
+    padding: 0px; }
+    li.have-children ul li a {
+      background-color: #3c3636;
+      padding-left: 62px; }
+      li.have-children ul li a:hover {
+        color: #fff;
+        background-color: #52565d;
+        padding-left: 62px; }
+
+li {
+  position: relative; }
+
+.have-children span::after {
+  position: absolute;
+  right: 30px;
+  content: "\f054";
+  color: #fff;
+  transition: all .5s; }
+
+li.active.have-children span::after {
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg); }

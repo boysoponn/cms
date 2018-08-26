@@ -1,4 +1,4 @@
-<?php 
+ <?php 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div class="content">
+<div  class="content">
 <?php 
 if(isset($_SESSION['username'])){ ?>
 
@@ -81,11 +81,24 @@ if(isset($_SESSION['username'])){ ?>
     </form>
     </div>
 <?php 
+$title = get_select('homepage','title');
+$description = get_select('homepage','description');
+$background_color = get_select('homepage','background_color');
+$img = get_select('homepage','hero_image');
+?>
 
+<body style="background-color:<?=$background_color?>">
+
+<h1><?=$title?></h1> 
+<p><?=$description?></p>
+<div class="pic">
+<img  src="/uploads/<?=$img?>" alt="">
+</div> <?php
 }
 ?>
 
-</div>
+
+
 </body>
 </html>
 

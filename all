@@ -68,3 +68,32 @@ SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'
 -------------------------------------------------------------------------------
 รับ url 
 "$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+--------------------------------------------------------------------------------
+เชื่อมกับ firebase
+
+ <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAl_c_xc-vKJcBtWPWV_RiiwLX0w68PLFk",
+    authDomain: "boysopon-34d19.firebaseapp.com",
+    databaseURL: "https://boysopon-34d19.firebaseio.com",
+    projectId: "boysopon-34d19",
+    storageBucket: "boysopon-34d19.appspot.com",
+    messagingSenderId: "305637138083"
+  };
+  firebase.initializeApp(config);
+  </script>
+  
+<script>
+var db=firebase.database().ref("user");
+  db.push({
+id:"1",
+firstname:  " <?php echo $firstname ?> ",
+lastname: "<?php echo $lastname ?>",
+password: "<?php echo $password ?> ",
+username:"<?php echo $username ?>"
+  });
+</script>
+
