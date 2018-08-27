@@ -16,58 +16,84 @@
     }
 
 ?>
+
+<div class="content">
+ <?php include('a.php')?>
+</div>
+<div class="headbar_menu">
+  <li><button id="logout" value="logout">LOGOUT</button></li>
+  <li>welcome : <?php echo $_SESSION['username'] ?> </li>
+</div>
+
 <ul class="sidebar-menu">
     <li><span class="nav-section-title"></span></li>
     <li class="have-children">
-      <a href="#"><span class="fa fa-university"></span>Hero</a>
-      <div class="cms_form" action="" method="post" enctype="multipart/form-data"> 
-        <div class="form-group-cms">
-          <input type="text" class="form-cms" name="title" id="title">
-          <label>Title</label>
-          <div class="input-border"></div>
-        </div>
-        <div class="form-group-cms">
-          <input type="text" class="form-cms" name="description" id="description">
-          <label>description</label>
-          <div class="input-border"></div>
-        </div>
-        <div class="form-group-cms">
-          <label class="image_label">Image</label>
-          <button class="input-file">
-            <input type="file" id="file-input"/>
-            <label for="file-input">UPLOAD</label>
-          </button>
-        </div>
-        <button class="save" id = "formsubmit" name="save" value="save" >Save</button><br>  
-  </div> 
-      
+      <a href="#"><span class="fa fa fa-folder"></span>Hero</a>
+        <div id="title"class="cms_form" action="" method="post" enctype="multipart/form-data"> 
+          <div  class="form-group-cms">
+            <input type="text" class="form-cms" name="title">
+            <label> Title</label>
+            <div class="input-border"></div>
+          </div>
+          <div class="form-group-cms">
+            <input type="text" class="form-cms" name="description" id="description">
+            <label>description</label>
+            <div class="input-border"></div>
+          </div>
+          <div class="form-group-cms">
+            <label class="image_label">Image</label>
+            <button class="input-file">
+              <input type="file" id="file-input"/>
+              <label for="file-input">UPLOAD</label>
+            </button>
+          </div>
+          <button class="save" id = "formsubmit" name="save" value="save" >Save</button><br>  
+        </div>  
     </li>
-
-    <li class="have-children"><a href="#"><span class="fa fa-tags"></span>Category</a>
-      <ul>
-        <li><a href="#">Add Category</a></li>
-        <li><a href="#">View Categories</a></li>
-      </ul>
+    <li class="have-children">
+      <a href="#"><span class="fa fa fa-folder"></span>Intro</a>
+        <div class="cms_form" action="" method="post" enctype="multipart/form-data"> 
+          <div class="form-group-cms">
+            <input type="text" class="form-cms" name="title" id="title">
+            <label> Title</label>
+            <div class="input-border"></div>
+          </div>
+          <div class="form-group-cms">
+            <input type="text" class="form-cms" name="description" id="description">
+            <label>description</label>
+            <div class="input-border"></div>
+          </div>
+          <div class="form-group-cms">
+            <label class="image_label">Image</label>
+            <button class="input-file">
+              <input type="file" id="file-input"/>
+              <label for="file-input">UPLOAD</label>
+            </button>
+          </div>
+          <button class="save" id = "formsubmit" name="save" value="save" >Save</button><br>  
+        </div>  
     </li>
-    <li class="have-children"><a href="#"><span class="fa fa-trophy"></span>Award</a>
-      <ul>
-        <li><a href="#">Add Award</a></li>
-        <li><a href="#">View Awards</a></li>
-      </ul>
-    </li>
-    <li class="have-children"><a href="#"><span class="fa fa-gavel"></span>Jury</a>
-      <ul>
-        <li><a href="#">Add Jury</a></li>
-        <li><a href="#">View Juries</a></li>
-      </ul>
-    </li>
-    <li class="have-children"><a href="#"><span class="fa fa-flag"></span>Reports</a>
-      <ul>
-        <li><a href="#">View Judging points</a></li>
-        <li><a href="#">Create Acceptances List</a></li>
-        <li><a href="#">Create Awarded List</a></li>
-        <li><a href="#">View Candidates for Awards</a></li>
-        <li><a href="responsive_table.html">Send Report Cards</a></li>
-      </ul>
+    <li class="have-children">
+      <a href="#"><span class="fa fa fa-folder"></span>Highlight</a>
+        <div class="cms_form" action="" method="post" enctype="multipart/form-data"> 
+          <div class="form-group-cms">
+            <input type="text" class="form-cms" name="title" id="title">
+            <label> Title</label>
+            <div class="input-border"></div>
+          </div>
+          <div class="form-group-cms">
+            <input type="text" class="form-cms" name="description" id="description">
+            <label>description</label>
+            <div class="input-border"></div>
+          </div>
+          <div class="form-group-cms">
+            <label class="image_label">Image</label>
+            <button class="input-file">
+              <input type="file" id="file-input"/>
+              <label for="file-input">UPLOAD</label>
+            </button>
+          </div>
+          <button class="save" id = "formsubmit" name="save" value="save" >Save</button><br>  
+        </div>  
     </li>
   </ul> 

@@ -1,12 +1,36 @@
+.headbar_menu {
+  background-color: #F1F1F1;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0; }
+  .headbar_menu li {
+    float: right;
+    margin-right: 50px;
+    display: block;
+    text-decoration: none;
+    color: #000; }
+    .headbar_menu li:hover {
+      display: block;
+      text-decoration: none; }
+
+.content {
+  margin-right: 0%;
+  margin-top: 5%;
+  float: right; }
+
 ul.sidebar-menu {
   margin: 0;
   padding: 0;
-  width: 250px;
+  width: 20%;
   height: 100%;
   background-color: #52565d;
   list-style: none;
   list-style-type: none;
-  position: fixed; }
+  position: fixed;
+  top: 50px;
+  left: 0; }
 
 .sidebar-menu .cms_form {
   display: none; }
@@ -68,6 +92,7 @@ ul.sidebar-menu {
     .sidebar-menu .cms_form .form-group-cms input[type="text"].form-cms,
     .sidebar-menu .cms_form .form-group-cms input[type="password"].form-cms {
       height: 48px;
+      font-size: 15px;
       background: none;
       border-radius: 0;
       box-shadow: none;
@@ -87,7 +112,7 @@ ul.sidebar-menu {
         box-shadow: none;
         border: none;
         color: #fff;
-        font-size: 15px; }
+        font-size: 18px; }
       .sidebar-menu .cms_form .form-group-cms input[type="text"].form-cms:active + label,
       .sidebar-menu .cms_form .form-group-cms input[type="text"].form-cms:focus + label,
       .sidebar-menu .cms_form .form-group-cms input[type="text"].form-cms.active + label,
@@ -95,7 +120,7 @@ ul.sidebar-menu {
       .sidebar-menu .cms_form .form-group-cms input[type="password"].form-cms:focus + label,
       .sidebar-menu .cms_form .form-group-cms input[type="password"].form-cms.active + label {
         color: #fff;
-        font-size: 11px;
+        font-size: 15px;
         top: -10px;
         transform: none; }
       .sidebar-menu .cms_form .form-group-cms input[type="text"].form-cms:active ~ .input-border,

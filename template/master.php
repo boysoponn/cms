@@ -1,17 +1,18 @@
 <?php 
 include('config.php');
-include('navbar.php');
 include('db_helper.php');
 $url="$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $actual_link = "$_SERVER[REQUEST_URI]";
 $actual_link_path=explode("/",$actual_link);
-if($actual_link == '/'){
-    include('cms.php'); 
-}else{
-    include($actual_link_path[1]);
-}
+// if($actual_link == '/'){
+//     include('navbar.php');
+// }else{
+//     include('navbar.php');
+// }
 if(!isset($_SESSION['username'])){
     include('login.php'); 
+}else{
+  include('navbar.php');  
 }
 ?>
 

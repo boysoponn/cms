@@ -4,16 +4,43 @@ $background_color_1: #4d5158;
 $background_color_2: #52565d;
 $background_color_3: #3c3636;
 
+.headbar_menu{
+	background-color: #F1F1F1;
+	height: 50px;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left:0;
+	
+	li{
+		float: right;
+		margin-right:50px;
+		display: block;
+		text-decoration: none;
+		color: #000;
+		&:hover {
+			display: block;
+			text-decoration: none;
+		}
+	}
+}
+.content{
+	margin-right: 0%;
+	margin-top: 5%;
+	float: right;
+}
 
 ul.sidebar-menu {
 	margin: 0;
 	padding: 0;
-	width: 250px;
+	width: 20%;
 	height: 100%;
 	background-color: $background_color_2;
 	list-style: none;
     list-style-type: none;
-    position: fixed;
+	position: fixed;
+	top: 50px;
+	left:0;
 }
 .sidebar-menu {
 	.cms_form {
@@ -82,6 +109,7 @@ ul.sidebar-menu {
 			input[type="text"].form-cms,
 			input[type="password"].form-cms{
 			height: 48px;
+			font-size: 15px;
 			background: none;
 			border-radius: 0;
 			box-shadow: none;
@@ -100,13 +128,13 @@ ul.sidebar-menu {
 				box-shadow: none;
 				border: none;
 				color:#fff;
-				font-size: 15px
+				font-size: 18px;
 			}
 			&:active + label,
 			&:focus + label,
 			&.active + label {
 				color: #fff;
-				font-size: 11px;
+				font-size: 15px;
 				top: -10px;
 				transform: none;
 			}

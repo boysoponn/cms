@@ -1,27 +1,23 @@
-
-// $(document).on('click','#topic',function(event)
-// {   
-//         $('.detail').css({"display":"block"});  
-// });
-
-
+// -----------------------------sidebar---------------------------------------
 $(document).ready(function(){
-
-	$(".sidebar-menu > li.have-children a").on("click", function(i){
+	$("#f").on("click", function(i){
 		  i.preventDefault();
-    if( ! $(this).parent().hasClass("active") ){
+    if( $("#title").hasClass("active") ){
       $(".cms_form").slideUp();
       $(this).next().slideToggle();
       $(".cms_form").removeClass("active");
-      $(this).parent().addClass("active");
+      $(".sideb+ar-menu li").addClass("active");
     }
     else{
-      $(this).next().slideToggle();
+      $("#title").remove("active")
+      $("#title").slideToggle();
       $(".sidebar-menu li").removeClass("active");
         }
     });
 });
+// ------------------------------------------------------------------------------
 
+//----------------------label input sidebar--------------------------------------
 $(function() {
   $('.form-group-cms .form-cms').focusout(function() {
     var $text_val = $(this).val();
@@ -33,7 +29,13 @@ $(function() {
   });
 });
 
+//--------------------------------------------------------------------------------
+//-----------------------------------logout---------------------------------------
 
+
+//-------------------------------------------------------------------------------
+
+//---------------------------------------send data-------------------------------
 $(document).ready(function(){
 
 	$('#formsubmit').click(function(){
@@ -45,8 +47,8 @@ $(document).ready(function(){
         $('#title').html(data);
         $('#description').html(data);
 			}
-		);
-		
-	});
-
+		);		
+  });
 });
+
+//--------------------------------------------------------------------------------
