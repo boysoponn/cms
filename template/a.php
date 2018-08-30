@@ -1,5 +1,6 @@
 <?php 
 $hero_title = get_select('homepage','title');
+$hero_description = get_select('homepage','description');
 ?>
 
 <div class="hold">
@@ -16,11 +17,11 @@ $hero_title = get_select('homepage','title');
     </div>
   </div>
 </div>
-<div id="f"class="section yyyy">
+<div id="hero2" class="section">
   <div class="slider">
     <div class="container slidercontent">
       <h1 class="hero"><?php echo $hero_title ?></h1>
-      <h2 class="hero">Wow.Wow.Wow</h2>
+      <h2 class="hero"><?php echo $hero_description ?></h2>
       <div class="call"><span>Wow</span></div>
     </div>
   </div>

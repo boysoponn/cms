@@ -18,20 +18,21 @@
 ?>
 
 <div class="content">
- <?php include('a.php')?>
+<?php include('a.php'); ?>
 </div>
 <div class="headbar_menu">
   <li><button id="logout" value="logout">LOGOUT</button></li>
+ 
   <li>welcome : <?php echo $_SESSION['username'] ?> </li>
 </div>
 
 <ul class="sidebar-menu">
     <li><span class="nav-section-title"></span></li>
     <li class="have-children">
-      <a href="#"><span class="fa fa fa-folder"></span>Hero</a>
-        <div id="title"class="cms_form" action="" method="post" enctype="multipart/form-data"> 
+      <a id="hero" href="#" ><span class="fa fa fa-folder"></span>Hero</a>
+        <div id="content_hero"class="cms_form" action="" method="post" enctype="multipart/form-data"> 
           <div  class="form-group-cms">
-            <input type="text" class="form-cms" name="title">
+            <input type="text" class="form-cms" name="title" id="title">
             <label> Title</label>
             <div class="input-border"></div>
           </div>

@@ -13,6 +13,10 @@
 // });
 
 
+
+
+
+
 $(document).ready(function(){
   $( document ).on( 'focus', ':input', function(){
       $( this ).attr( 'autocomplete', 'off' );
@@ -41,26 +45,43 @@ $(document).on('click','#login',function(event)
         $('.material-form2').css({"display":"none"});
         $('.material-form1').css({"display":"block"});    
 });
-// -----------------------------sidebar---------------------------------------
+//----------------------sidebar--------------------------------------
+
 $(document).ready(function(){
-	$("#f").on("click", function(i){
+	$("#hero").on("click", function(i){
 		  i.preventDefault();
-    if( $("#title").hasClass("active") ){
-      $(".cms_form").slideUp();
-      $(this).next().slideToggle();
-      $(".cms_form").removeClass("active");
-      $(".sideb+ar-menu li").addClass("active");
+    if( $("#content_hero").hasClass("active") ){
+      $("#content_hero").slideToggle();
+      $(".sidebar-menu li").removeClass("active");
+      $("#content_hero").removeClass("active");
     }
     else{
-      $("#title").remove("active")
-      $("#title").slideToggle();
+      i.preventDefault();
+      $("#content_hero").addClass("active");
+      $("#content_hero").slideToggle();
+      $(".sidebar-menu li").addClass("active");
+        }
+    });
+    
+    	$("#hero2").on("click", function(i){
+		  i.preventDefault();
+    if( $("#content_hero").hasClass("active") ){
+      $("#content_hero").slideToggle();
       $(".sidebar-menu li").removeClass("active");
+      $("#content_hero").removeClass("active");
+    }
+    else{
+      i.preventDefault();
+      $("#content_hero").addClass("active");
+      $("#content_hero").slideToggle();
+      $(".sidebar-menu li").addClass("active");
         }
     });
 });
 // ------------------------------------------------------------------------------
 
 //----------------------label input sidebar--------------------------------------
+
 $(function() {
   $('.form-group-cms .form-cms').focusout(function() {
     var $text_val = $(this).val();
@@ -79,16 +100,22 @@ $(function() {
 //-------------------------------------------------------------------------------
 
 //---------------------------------------send data-------------------------------
-$(document).ready(function(){
 
-	$('#formsubmit').click(function(){
+
+$(document).ready(function(){
+  $('#formsubmit').click(function(){ 
+    
 		$.post("navbar.php", 
       {
         title: $('#title').val(),
         description: $('#description').val()},
 			function(data){
+        data.preventDefault();
+        doCallAjax();
         $('#title').html(data);
         $('#description').html(data);
+       
+        
 			}
 		);		
   });

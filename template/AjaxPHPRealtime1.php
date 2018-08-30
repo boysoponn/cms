@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 	/*** By Weerachai Nukitram ***/
 	/***  http://www.ThaiCreate.Com ***/	
 ?>
@@ -78,4 +78,4 @@
 
 <span id="mySpan"></span>
 </body>
-</html>
+</html> -->

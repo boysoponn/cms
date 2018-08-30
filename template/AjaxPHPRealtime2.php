@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 /*** By Weerachai Nukitram ***/
 /***  http://www.ThaiCreate.Com ***/
 
@@ -6,9 +6,9 @@
 
 
 
-$objConnect = new mysqli("localhost","root","","customer");
 
-$objQuery= mysqli_query($objConnect,"SELECT * from customer WHERE 1" ) ;
+
+$objQuery= mysqli_query($connect,"SELECT * from customer WHERE 1" ) ;
 
 ?>
 
@@ -40,5 +40,5 @@ while($objResult = mysqli_fetch_array($objQuery))
 ?>
 </table>
 <?php
-mysqli_close($objConnect);
-?>
+mysqli_close($connect);
+?> -->
